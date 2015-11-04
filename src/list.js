@@ -7,4 +7,6 @@ define(function () {
 	}
 	List.prototype = {};
 	List.prototype.constructor = List;
+
+	return List;
 });

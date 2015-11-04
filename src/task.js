@@ -7,5 +7,7 @@ define(function () {
 	}
 	Task.prototype = {};
 	Task.prototype.constructor = Task;
+
+	return Task;
 });
 
