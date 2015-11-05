@@ -1,7 +1,7 @@
-require(['task_manager'], function (taskManager) {
+require(['task_manager', 'smokesignals'], function (taskManager, smokesignals) {
 	'use strict';
 
 	var aTask = taskManager.createTask('My first task!');
-	console.log(aTask);
+	console.log(smokesignals);
 });
 define();
