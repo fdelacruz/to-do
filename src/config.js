@@ -4,7 +4,9 @@ require.config({
 	enforceDefine: true,
 	paths: {
 		'knockout': '../external/knockout-3.3.0',
-		'smokesignals': '../external/smokesignals'
+		'smokesignals': '../external/smokesignals',
+		'text': '../external/text',
+		'views': '../views'
 	},
 	shim: {
 		'smokesignals': {
