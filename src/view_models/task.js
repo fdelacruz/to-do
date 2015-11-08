@@ -11,6 +11,16 @@ define(['knockout'], function (ko) {
 			this.emit('taskremoved');
 		};
 		this.deleteTaskHandler = this.deleteTask.bind(this);
+
+		this.completeTaskClass = ko.computed(function () {
+			return (this.completed() ? 'complete' : '');
+		}, this);
+
+		this.toggleTaskComplete = function () {
+			this.completed(!this.completed());
+			return true;
+		};
+		this.toggleTaskCompleteHandler = this.toggleTaskComplete.bind(this);
 	}
 
 	return TaskViewModel;
