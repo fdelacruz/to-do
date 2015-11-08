@@ -18,6 +18,7 @@ define(['knockout'], function (ko) {
 
 		this.toggleTaskComplete = function () {
 			this.completed(!this.completed());
+			this.emit('taskcompleted');
 			return true;
 		};
 		this.toggleTaskCompleteHandler = this.toggleTaskComplete.bind(this);

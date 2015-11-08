@@ -33,7 +33,7 @@ define(['list_manager', 'knockout', 'i18n!nls/ui_strings', 'task_manager', 'rend
 
 			smokesignals.convert(taskViewModel);
 			taskViewModel.on('taskremoved', this.removeTaskHandler);
-			
+			taskViewModel.on('taskcompleted', this.completeTask.Handler);	
 			this.taskName('');
 
 			return taskViewModel;
@@ -44,6 +44,12 @@ define(['list_manager', 'knockout', 'i18n!nls/ui_strings', 'task_manager', 'rend
 			this.list.tasks.splice(index, 1);
 		};
 		this.removeTaskHandler = this.removeTask.bind(this);
+
+		this.completeTask = function (taskViewModel) {
+			var taskIndex = taskViewModel.id.split('-')[1];
+			this.lists.tasks[taskIndex].completed = !this.list.tasks[taskIndex].completed;
+		};
+		this.completeTaskHandler = this.completeTask.bind(this);
 	}
 
 	return ListViewModel;
