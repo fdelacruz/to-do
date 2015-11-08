@@ -50,6 +50,11 @@ define(['list_manager', 'knockout', 'i18n!nls/ui_strings', 'task_manager', 'rend
 			this.lists.tasks[taskIndex].completed = !this.list.tasks[taskIndex].completed;
 		};
 		this.completeTaskHandler = this.completeTask.bind(this);
+
+		this.saveList = function () {
+			listManager.saveList(this.list);
+		};
+		this.saveListHandler = this.saveList.bind(this);
 	}
 
 	return ListViewModel;
