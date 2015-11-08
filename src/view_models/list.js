@@ -1,4 +1,4 @@
-define(['list_manager', 'knockout', 'i18n!nls/ui_strings', 'task_manager', 'renderer', 'view_models/task', 'text!views/task.html'], function (listManager, ko, uiStrings, taskManager, renderer, TaskViewModel, taskView) {
+define(['list_manager', 'knockout', 'i18n!nls/ui_strings', 'task_manager', 'renderer', 'view_models/task', 'text!views/task.html', 'smokesignals'], function (listManager, ko, uiStrings, taskManager, renderer, TaskViewModel, taskView, smokesignals) {
 	'use strict';
 
 	function ListViewModel() {
@@ -30,12 +30,20 @@ define(['list_manager', 'knockout', 'i18n!nls/ui_strings', 'task_manager', 'rend
 			taskViewModel.completed(false);
 
 			renderer.render(container, taskView, taskViewModel, true);
+
+			smokesignals.convert(taskViewModel);
+			taskViewModel.on('taskremoved', this.removeTaskHandler);
 			
 			this.taskName('');
 
 			return taskViewModel;
 		};
 		this.addTaskHandler = this.addTask.bind(this);
+
+		this.removeTask = function (index) {
+			this.list.tasks.splice(index, 1);
+		};
+		this.removeTaskHandler = this.removeTask.bind(this);
 	}
 
 	return ListViewModel;

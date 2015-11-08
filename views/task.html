@@ -2,6 +2,7 @@
   <div>
     <input name="completed" type="checkbox" data-bind="checked: completed" />
     <label for="task" data-bind="text: name"></label>
-    <a href="#" class="delete" title="Remove task">x</a>
+    <a href="#" class="delete" title="Remove task" data-bind="event: { click: 
+    deleteTaskHandler }">x</a>
   </div>
 </li>
