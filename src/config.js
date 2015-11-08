@@ -6,7 +6,8 @@ require.config({
 		'knockout': '../external/knockout-3.3.0',
 		'smokesignals': '../external/smokesignals',
 		'text': '../external/text',
-		'views': '../views'
+		'views': '../views',
+		'i18n': '../external/i18n'
 	},
 	shim: {
 		'smokesignals': {
