@@ -7,8 +7,9 @@ test/lib/jasmine-2.3.4/jasmine.css
 ----------------
 test/lib/jasmine-2.3.4/jasmine.css
 
-src/main.js
+src/../external/almond.js
 ----------------
+src/../external/almond.js
 external/text.js
 text!views/app.html
 external/i18n.js
