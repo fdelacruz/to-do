@@ -1,9 +1,5 @@
-define(['list_manager', 'require'], function (listManager, require) {
+define(function () {
 	'use strict';
-
-	require(['list_manager'], function (listManager) {
-		console.log(listManager.createList);
-	});
 
 	function List(listId) {
 		this.tasks = [];
